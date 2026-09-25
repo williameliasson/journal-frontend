@@ -1,11 +1,19 @@
 <div class="flexContainer">
     <form [formGroup]="form" (ngSubmit)="login()">
-        <label for="username">Username: </label>
-        <input name="username" type="text" formControlName="username">
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" formControlName="password">
-        <br>
-        <button type="submit">Login</button>
+        <div class="row">
+            <label for="username">Username: </label>
+            <input name="username" type="text" formControlName="username">
+        </div>
+        <div class="row">
+            <label for="password">Password: </label>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="row center">
+            <button type="submit">Login</button>
+        </div>
+        <div class="row">
+            <p>Dont have an account?</p>
+            <button routerLink="/register">Register</button>
+        </div>
     </form>
 </div>
