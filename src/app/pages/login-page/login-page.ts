@@ -1,9 +1,27 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login-page',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.scss',
 })
-export class LoginPage {}
+export class LoginPage {
+  
+  private fb = inject(FormBuilder);
+  private http = inject(HttpClient)
+  private authService = inject(AuthService)
+
+  form = this.fb.group({
+    username: [''],
+    password: ['']
+  })
+  login(){
+    this.http.post("http://localhost:8080/api/login", this.form.value, {withCredentials: true}).subscribe(() => {
+      this.authService.fetchCurrentUser();
+    })
+  }
+}
