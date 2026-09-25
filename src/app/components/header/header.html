@@ -1,15 +1,16 @@
 <nav>
-    <h1>Journal</h1>
-    <ul>
-        <li><button routerLink="/">home</button></li>
-        <li><button routerLink="/login">login</button></li>
-        <li><button routerLink="/register">reg</button></li>
-    </ul>
-    @if (authService.currentUser(); as username) {
-        <!-- Here is what is shown if the user is logged in -->
-        <p>logged in as {{username}}</p>
-        <!-- add: button to log out -->
-    } @else {
-        <button routerLink="/login">Login</button>
-    }
+    <h1 routerLink="/">Journal</h1>
+    <div class="linkContainer">
+        <button routerLink="/entries">My Entries</button>
+        <button routerLink="/stats">Stats</button>
+    </div>
+    <div class="loggedInAsContainer">
+        @if (authService.currentUser(); as username) {
+            <!-- Here is what is shown if the user is logged in -->
+            <p>logged in as {{username}}</p>
+            <!-- add: button to log out -->
+        } @else {
+            <button routerLink="/login">Login</button>
+        }
+    </div>
 </nav>
