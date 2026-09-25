@@ -1,4 +1,15 @@
-<div>
-    <p>header</p>
-    <p>logged in as {{authService.currentUser()}}</p>
-</div>
+<nav>
+    <h1>Journal</h1>
+    <ul>
+        <li><button routerLink="/">home</button></li>
+        <li><button routerLink="/login">login</button></li>
+        <li><button routerLink="/register">reg</button></li>
+    </ul>
+    @if (authService.currentUser(); as username) {
+        <!-- Here is what is shown if the user is logged in -->
+        <p>logged in as {{username}}</p>
+        <!-- add: button to log out -->
+    } @else {
+        <button routerLink="/login">Login</button>
+    }
+</nav>
