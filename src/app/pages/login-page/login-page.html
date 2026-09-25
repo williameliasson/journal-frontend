@@ -1,6 +1,11 @@
-<h1>Login Page</h1>
-<form [formGroup]="form" (ngSubmit)="login()">
-    <input type="text" formControlName="username">
-    <input type="password" formControlName="password">
-    <button type="submit">Login</button>
-</form>
+<div class="flexContainer">
+    <form [formGroup]="form" (ngSubmit)="login()">
+        <label for="username">Username: </label>
+        <input name="username" type="text" formControlName="username">
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" formControlName="password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</div>
