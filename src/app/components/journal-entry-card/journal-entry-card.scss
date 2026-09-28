@@ -3,37 +3,60 @@
     flex-direction: row;
     height: 80px;
     width: auto;
-    outline: 1px solid black;
+    // outline: 1px solid black;
+    align-items: center;
 }
 
 .timeline-container{
     height: 100%; // be square but fill out the height of the parent
     aspect-ratio: 1;
     width: auto;
-    background-color: blue;
-    outline: 1px solid black;
+    // background-color: blue;
+    // outline: 1px solid black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.timeline-container div {
+.timeline-container .letter-container {
+    z-index: 1;
     border-radius: 50%;
     padding: 5px;
     background-color: white;
-    height: 20%;
-    width: 20%;
+    height: 15%;
+    width: 15%;
     display: flex;
+    // border: 1px solid black;
+    font-size: 30px;
     justify-content: center;
     align-items: center;
+}
+
+.vertical-bar{
+    z-index: 0;
+    background-color: black;
+    width: 1px;
+    height: 50%;
+    border: 2px solid black;
 }
 
 .info-container{
     display: flex;
     flex-direction: column;
+    background-color: #CDE7B0;
+    border:1px solid black;
+    border-radius: 6px;
+    height: 80%;
+    margin: 5px;
+    justify-content: center;
 }
 
 .info-container * {
     margin: 0px;
     padding: 10px;
+}
+
+.title {
+    
 }

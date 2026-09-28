@@ -8,7 +8,8 @@ export type JournalEntryDTO = {
   username: string,
   title: string,
   createdAt: string,
-  moodName: string
+  moodName: string,
+  moodIcon: string
 }
 
 @Injectable({
@@ -20,6 +21,9 @@ export class JournalEntryService {
   http = inject(HttpClient);
   fetchMyJournalEntries(){
     this.http.get<JournalEntryDTO[]>("http://localhost:8080/api/me/journalentries", {withCredentials: true}).subscribe({next: data => {
+      data.forEach(pc => {
+        pc.moodIcon = "😎"
+      })
       this.entries.set(data);
     }})
   }

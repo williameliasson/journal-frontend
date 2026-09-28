@@ -1,11 +1,13 @@
 <div class="card">
     <div class="timeline-container">
-        <div class="letter-container">
-            <span>{{entry.moodName[0]}}</span>
-        </div>
+        <div class="vertical-bar"></div>
+            <div class="letter-container">
+                <span>{{entry.moodIcon}}</span>
+            </div>
+        <div class="vertical-bar"></div>
     </div>
     <div class="info-container">
-        <p>{{entry.title}}</p>
+        <b>{{entry.title}}</b>
         <!-- ska vara                "27 februari 2025 klockan 13:55" (svensk tid) OBS! Följ formatet -->
         <p>{{entry.createdAt| date:"dd MMMM yyyy 'klockan' HH:mm":'':'sv-SE'}}</p>
     </div>

@@ -7,7 +7,7 @@
     <div class="loggedInAsContainer">
         @if (authService.currentUser(); as username) {
             <!-- Here is what is shown if the user is logged in -->
-            <p>logged in as {{username}}</p>
+            <span>logged in as {{username}}</span>
             <!-- add: button to log out -->
         } @else {
             <button routerLink="/login">Login</button>
