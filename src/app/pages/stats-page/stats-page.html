@@ -1,0 +1,10 @@
+<h1>Stats</h1>
+<form [formGroup]="form" (ngSubmit)="fetchStats()">
+    <label for="from">From:</label>
+    <input type="date" formControlName="from" name="from" id="from">
+    <br>
+    <label for="to">To:</label>
+    <input type="date" formControlName="to" name="to" id="to">
+    <br>
+    <button type="submit">Get stats</button>
+</form>

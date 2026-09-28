@@ -12,7 +12,6 @@ import { MoodService } from '../../services/mood-service';
 export class Header implements OnInit{
   authService = inject(AuthService);
   moodService = inject(MoodService);
-
   ngOnInit(): void {
       this.authService.fetchCurrentUser();
       this.moodService.fetchMoods();
