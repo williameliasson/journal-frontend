@@ -1,0 +1,25 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: auto;
+    outline: 1px solid black;
+}
+
+.timeline-container{
+    height: 100%; // be square but fill out the height of the parent
+    aspect-ratio: 1;
+    width: auto;
+    background-color: blue;
+    outline: 1px solid black;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container * {
+    margin: 0px;
+    padding: 10px;
+}

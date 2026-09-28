@@ -1,5 +1,10 @@
 <div class="card">
-    <h2>{{entry.title}}</h2>
-    <!-- ska vara                "27 februari 2025 klockan 13:55" (svensk tid) OBS! Följ formatet -->
-    <span>{{entry.createdAt| date:"dd MMMM yyyy 'klockan' HH:mm":'':'sv-SE'}}</span>
+    <div class="timeline-container">
+
+    </div>
+    <div class="info-container">
+        <p>{{entry.title}}</p>
+        <!-- ska vara                "27 februari 2025 klockan 13:55" (svensk tid) OBS! Följ formatet -->
+        <p>{{entry.createdAt| date:"dd MMMM yyyy 'klockan' HH:mm":'':'sv-SE'}}</p>
+    </div>
 </div>
