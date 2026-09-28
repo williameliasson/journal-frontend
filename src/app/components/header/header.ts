@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth-service';
 import { RouterLink } from '@angular/router';
+import { MoodService } from '../../services/mood-service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,10 @@ import { RouterLink } from '@angular/router';
 })
 export class Header implements OnInit{
   authService = inject(AuthService);
-  
+  moodService = inject(MoodService);
+
   ngOnInit(): void {
       this.authService.fetchCurrentUser();
+      this.moodService.fetchMoods();
   }
 }
