@@ -1,1 +1,12 @@
-<p>home-page works!</p>
+@if (!authService.currentUser()) {
+    <h1>Youre not logged in!</h1>
+} @else {
+    <h1>New Entry</h1>
+    <form [formGroup]="form" (ngSubmit)="createJournalEntry()">
+        <p>title</p>
+        <input type="text" name="title" formControlName="title" id="">
+        <p>moodid</p>
+        <input type="text" name="moodId" formControlName="moodId" id="">
+        <button type="submit">create</button>
+    </form>
+}
