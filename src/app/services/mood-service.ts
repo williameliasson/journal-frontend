@@ -3,14 +3,15 @@ import { inject, Injectable, signal } from '@angular/core';
 
 export type MoodDTO = {
   id: number,
-  name: string
+  name: string,
+  icon: string
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoodService {
-  moods = signal<MoodDTO[] | null>(null);
+  moods = signal<MoodDTO[]>([]);
   http = inject(HttpClient);
 
   fetchMoods(){

@@ -6,12 +6,20 @@
         <p>Title:</p>
         <input type="text" name="title" formControlName="title" id="">
         <p>Mood:</p>
-        <!-- <input type="text" name="moodId" formControlName="moodId" id=""> -->
-         @for (mood of moodService.moods(); track $index) {
-             <input type="radio" name="moodId" formControlName="moodId" value="{{mood.id}}" id="moodId-{{mood.id}}">
-             <label for="moodId-{{mood.id}}">{{mood.name}}</label>
-            <br>
-         }
+        <div class="mood-picker-container">
+            <!-- src is from a previous school assignment: https://github.com/Temmuks/grp-3-multiplayer-server/blob/081504a079ffe9346de8a39000fe78dbbae3d270/src/main/java/multiplayer/multiplayer/Service/GameRoomService.java#L76 -->
+            @let moods = moodService.moods();
+            @let moodCount = moods.length;
+            @let radiansBetweenMoods = (2*Math.PI)/moodCount;
+            @let radius = 200;
+            @for (mood of moods; track $index) {
+                @let moodAngleRadians = $index * radiansBetweenMoods;
+                <div class="mood-selection" [style.margin-left.px]="radius * Math.cos(moodAngleRadians)" [style.margin-bottom.px]="radius * Math.sin(moodAngleRadians)">
+                    <input type="radio" name="moodId" formControlName="moodId" value="{{mood.id}}" id="moodId-{{mood.id}}" >
+                    <label for="moodId-{{mood.id}}">{{mood.icon}}</label>
+                </div>
+            }
+        </div>
         <button type="submit">create</button>
     </form>
 }

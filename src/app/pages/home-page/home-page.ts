@@ -18,7 +18,7 @@ export class HomePage {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
   private router = inject(Router);
-
+  Math = Math;
   form = this.fb.group({
     title: [''],
     moodId: ['']
