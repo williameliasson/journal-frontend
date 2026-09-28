@@ -3,10 +3,15 @@
 } @else {
     <h1>New Entry</h1>
     <form [formGroup]="form" (ngSubmit)="createJournalEntry()">
-        <p>title</p>
+        <p>Title:</p>
         <input type="text" name="title" formControlName="title" id="">
-        <p>moodid</p>
-        <input type="text" name="moodId" formControlName="moodId" id="">
+        <p>Mood:</p>
+        <!-- <input type="text" name="moodId" formControlName="moodId" id=""> -->
+         @for (mood of moodService.moods(); track $index) {
+             <input type="radio" name="moodId" formControlName="moodId" value="{{mood.id}}" id="moodId-{{mood.id}}">
+             <label for="moodId-{{mood.id}}">{{mood.name}}</label>
+            <br>
+         }
         <button type="submit">create</button>
     </form>
 }

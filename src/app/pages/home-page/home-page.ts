@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth-service';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MoodService } from '../../services/mood-service';
 
 @Component({
   selector: 'app-home-page',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class HomePage {
   
   authService = inject(AuthService);
+  moodService = inject(MoodService);
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
   private router = inject(Router);
