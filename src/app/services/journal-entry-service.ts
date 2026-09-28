@@ -15,7 +15,7 @@ export type JournalEntryDTO = {
   providedIn: 'root',
 })
 export class JournalEntryService {
-  entries = signal<JournalEntryDTO[] | null>(null);
+  entries = signal<JournalEntryDTO[]>([]);
 
   http = inject(HttpClient);
   fetchMyJournalEntries(){
