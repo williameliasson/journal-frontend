@@ -11,7 +11,7 @@
             @let moods = moodService.moods();
             @let moodCount = moods.length;
             @let radiansBetweenMoods = (2*Math.PI)/moodCount;
-            @let radius = 200;
+            @let radius = 220;
             @for (mood of moods; track $index) {
                 @let moodAngleRadians = $index * radiansBetweenMoods;
                 <div class="mood-selection" [style.margin-left.px]="radius * Math.cos(moodAngleRadians)" [style.margin-bottom.px]="radius * Math.sin(moodAngleRadians)">
