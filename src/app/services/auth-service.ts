@@ -16,4 +16,10 @@ export class AuthService {
       this.currentUser.set(data.username);
     })
   }
+
+  logout(){
+    this.http.post<void>("http://localhost:8080/api/logout",{}, {withCredentials: true}).subscribe();
+    this.currentUser.set(null);
+  };
+  
 }

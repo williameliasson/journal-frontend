@@ -8,7 +8,7 @@
         @if (authService.currentUser(); as username) {
             <!-- Here is what is shown if the user is logged in -->
             <span>logged in as {{username}}</span>
-            <!-- add: button to log out -->
+            <button (click)="authService.logout()">Log out</button>
         } @else {
             <button routerLink="/login">Login</button>
         }
