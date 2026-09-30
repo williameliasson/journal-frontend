@@ -11,9 +11,9 @@ form{
     flex-direction: column;
     border: 1px solid gray;
     border-radius: 8px;
-    * {
-        margin:15px;
-        width: fit-content;
+    justify-content: space-between;
+    div{
+        margin:8px;
     }
 }
 
@@ -22,8 +22,18 @@ form{
     flex-direction: row;
 }
 
+.register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    button{
+        height: fit-content;
+    }
+}
+
 .center {
-    justify-content: center; // varför funkar inte???
+    justify-content: center;
 }
 
 .flexContainer{
@@ -33,4 +43,12 @@ form{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.error {
+    visibility: hidden;
+    color: red;
+    &.visible {
+        visibility: visible;
+    }
 }

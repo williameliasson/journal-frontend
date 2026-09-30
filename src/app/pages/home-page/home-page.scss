@@ -14,3 +14,11 @@
     transform: translateX(-5px);
     font-size: 30px;
 }
+
+.error {
+    visibility: hidden;
+    color: red;
+    &.visible {
+        visibility: visible;
+    }
+}

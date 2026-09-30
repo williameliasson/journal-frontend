@@ -3,15 +3,22 @@
         <div class="row">
             <label for="username">Username: </label>
             <input name="username" type="text" formControlName="username">
+            
         </div>
+        <div class="error" [class.visible]="form.controls.username.invalid && form.controls.username.touched"><span>Username is required</span></div>
+        
         <div class="row">
             <label for="password">Password: </label>
             <input type="password" formControlName="password">
         </div>
+        <div class="error" [class.visible]="form.controls.password.invalid && form.controls.password.touched"><span>Password is 8 characters minimum</span></div>
         <div class="row center">
-            <button type="submit">Login</button>
+            <button type="submit" [disabled]="form.invalid">Login</button>
         </div>
-        <div class="row">
+        <div class="error" [class.visible]="errorMessage()">
+            <span>{{errorMessage()}}</span>
+        </div>
+        <div class="register row">
             <p>Dont have an account?</p>
             <button routerLink="/register">Register</button>
         </div>
