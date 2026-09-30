@@ -1,1 +1,28 @@
-<p>register-page works!</p>
+<div class="flexContainer">
+    <form [formGroup]="form" (ngSubmit)="register()">
+        <div class="row">
+            <label for="username">Username: </label>
+            <input name="username" type="text" formControlName="username">
+            
+        </div>
+        <div class="error" [class.visible]="form.controls.username.invalid && form.controls.username.touched"><span>Username is required!</span></div>
+        
+        <div class="row">
+            <label for="password">Password: </label>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="error" [class.visible]="form.controls.password.invalid && form.controls.password.touched"><span>Password is 8 characters minimum!</span></div>
+        <div class="row">
+            <label for="matchingPassword">Password again: </label>
+            <input type="password" formControlName="matchingPassword">
+        </div>
+        <div class="error" [class.visible]="form.hasError('passwordsDontMatch') && form.controls.password.touched"><span>Passwords do not match!</span></div>
+        <div class="row center">
+            <button type="submit" [disabled]="form.invalid">Register</button>
+        </div>
+        <div class="register row">
+            <p>Already have an account?</p>
+            <button routerLink="/login">Login</button>
+        </div>
+    </form>
+</div>
