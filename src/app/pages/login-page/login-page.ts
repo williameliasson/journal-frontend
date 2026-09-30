@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import { AuthService } from '../../services/auth-service';
 import { RouterLink } from '@angular/router';
 
@@ -17,8 +17,8 @@ export class LoginPage {
   private authService = inject(AuthService)
 
   form = this.fb.group({
-    username: [''],
-    password: ['']
+    username: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(8)]]
   })
   login(){
     this.http.post("http://localhost:8080/api/login", this.form.value, {withCredentials: true}).subscribe(() => {
