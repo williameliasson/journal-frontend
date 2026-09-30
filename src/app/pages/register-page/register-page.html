@@ -20,6 +20,9 @@
         <div class="row center">
             <button type="submit" [disabled]="form.invalid">Register</button>
         </div>
+        <div class="error" [class.visible]="errorMessage()">
+            <span>{{errorMessage()}}</span>
+        </div>
         <div class="register row">
             <p>Already have an account?</p>
             <button routerLink="/login">Login</button>
