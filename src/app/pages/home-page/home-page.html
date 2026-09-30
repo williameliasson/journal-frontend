@@ -5,6 +5,11 @@
     <form [formGroup]="form" (ngSubmit)="createJournalEntry()">
         <p>Title:</p>
         <input type="text" name="title" formControlName="title" id="">
+        <div class="error"
+            [class.visible]="form.controls.title.invalid && form.controls.title.touched"
+        >
+            <p>Title cannot be blank!</p>
+        </div>
         <p>Mood:</p>
         <div class="mood-picker-container">
             <!-- src is from a previous school assignment: https://github.com/Temmuks/grp-3-multiplayer-server/blob/081504a079ffe9346de8a39000fe78dbbae3d270/src/main/java/multiplayer/multiplayer/Service/GameRoomService.java#L76 -->
@@ -20,6 +25,6 @@
                 </div>
             }
         </div>
-        <button type="submit">create</button>
+        <button type="submit" [disabled]="form.invalid">create</button>
     </form>
 }
