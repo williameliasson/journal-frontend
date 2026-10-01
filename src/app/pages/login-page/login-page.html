@@ -1,5 +1,5 @@
 <div class="flexContainer">
-    <form [formGroup]="form" (ngSubmit)="login()">
+    <form [formGroup]="form" (ngSubmit)="authService.login(form, errorMessage)">
         <div class="row">
             <label for="username">Username: </label>
             <input name="username" type="text" formControlName="username">
