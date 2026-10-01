@@ -2,7 +2,7 @@
     <h1>Youre not logged in!</h1>
 } @else {
     <h1>New Entry</h1>
-    <form [formGroup]="form" (ngSubmit)="createJournalEntry()">
+    <form [formGroup]="form" (ngSubmit)="journalEntryService.createJournalEntry(form)">
         <p>Title:</p>
         <input type="text" name="title" formControlName="title" id="">
         <div class="error"
