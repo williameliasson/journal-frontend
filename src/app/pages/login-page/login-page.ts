@@ -31,7 +31,9 @@ export class LoginPage {
           this.router.navigate(["/"])
         }
       }, error: (data) => {
-        this.errorMessage.set("Could not login")
+        if (data.status == 401){
+          this.errorMessage.set("Incorrect credentials")
+        }
       }
   })
   }

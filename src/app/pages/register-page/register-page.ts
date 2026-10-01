@@ -33,8 +33,15 @@ export class RegisterPage {
           } 
       },
       error: (data) => {
-        if (data.status == 400){
-          this.errorMessage.set("Could not register")
+        switch (data.status) {
+          case 409: {
+            this.errorMessage.set("Username already taken")
+            break;
+          }
+          case 400: {
+            this.errorMessage.set("Could not register")
+            break;
+          }
         }
       }
     }
