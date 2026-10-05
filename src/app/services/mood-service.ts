@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { effect, inject, Injectable, signal } from '@angular/core';
 import { AuthService } from './auth-service';
+import { env } from '../../env/env';
 
 export type MoodDTO = {
   id: number,
@@ -21,7 +22,7 @@ export class MoodService {
     this.fetchMoods()
   })
   fetchMoods(){
-    this.http.get<MoodDTO[]>("http://localhost:8080/api/moods", {withCredentials: true}).subscribe({next: data => {
+    this.http.get<MoodDTO[]>(env.apiUrl+"/moods", {withCredentials: true}).subscribe({next: data => {
       this.moods.set(data);
     }})
   }
