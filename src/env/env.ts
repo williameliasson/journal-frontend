@@ -1,3 +1,3 @@
 export const env = {
-    apiUrl: "https://some-url-not-yet-defined"
+    apiUrl: "https://api.journal.williameliasson.com/api"
 }

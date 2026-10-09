@@ -8,7 +8,7 @@ This is the frontend of a project where you can log your mood over time, and get
 ## How to run
 1. Make sure you have [Node](https://nodejs.org/en/download) and [Angular CLI](https://angular.dev/installation) installed.
 2. Run `npm install` to install dependencies.
-3. Run `ng serve` to start the app.
+3. Run `ng serve --configuration development` to start the app in dev mode.
 4. The app should now be available on http://localhost:4200
 
 ## Features
