@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
+import { env } from '../../env/env';
 
 // MoodStat(String moodName, double percentage) {
 export type MoodStatDTO = {
@@ -32,7 +33,7 @@ export class StatisticsService {
     .set("to",to);
     
     this.http.get<StatisticsDTO>(
-      "http://localhost:8080/api/me/journalentries/statistics",
+      env.apiUrl+"/me/journalentries/statistics",
       {
         withCredentials: true,
         params: queryParams

@@ -53,6 +53,9 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [
+                {"replace": "src/env/env.ts", "with": "src/env/env.dev.ts"}
+              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
