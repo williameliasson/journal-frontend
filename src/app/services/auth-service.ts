@@ -62,8 +62,9 @@ export class AuthService {
   }
 
   logout(){
-    this.http.post<void>(env.apiUrl+"/api/logout",{}, {withCredentials: true}).subscribe();
+    this.http.post<void>(env.apiUrl+"/logout",{}, {withCredentials: true}).subscribe();
     this.currentUser.set(null);
+    this.router.navigate(["/"]);
   };
   
 }

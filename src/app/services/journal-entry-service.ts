@@ -33,6 +33,7 @@ export class JournalEntryService {
 
   fetchMyJournalEntries(){
     if (this.authService.currentUser() == null){
+      this.entries.set([]);
       return;
     }
     this.http.get<JournalEntryDTO[]>(env.apiUrl+"/me/journalentries", {withCredentials: true}).subscribe({next: data => {
